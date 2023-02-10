@@ -9,12 +9,12 @@
             {% if c == current_category %}
                 <li>
                     <strong>
-                        <a href="{% url 't_w_d_app:show_category' c.slug %}">{{ c.name }}</a>
+                        <a href="{% url 'rango:show_category' c.slug %}">{{ c.name }}</a>
                     </strong>
                 </li>
             {% else %}
                 <li>
-                    <a href="{% url 't_w_d_app:show_category' c.slug %}">{{ c.name }}</a>
+                    <a href="{% url 'rango:show_category' c.slug %}">{{ c.name }}</a>
                 </li>
             {% endif %}
         {% endfor %}

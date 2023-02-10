@@ -13,7 +13,7 @@
 
 {% block body_block %}
     {% if user.is_authenticated %}
-        <form id="{{ csrf_token }}" method="post" action="{% url 't_w_d_app:add_page' category.slug %}">
+        <form id="{{ csrf_token }}" method="post" action="{% url 'rango:add_page' category.slug %}">
             {% csrf_token %}
             {% for hidden in form.hidden_fields %}
                 {{ hidden }}
@@ -27,7 +27,7 @@
         </form>
     {% else %} 
         You must be loggin in to upload Categories
-        <a href="{% url 't_w_d_app:login' %}">Please login here</a>
+        <a href="{% url 'rango:login' %}">Please login here</a>
     {% endif %}
-    {% endif %}
+
 {% endblock %}
