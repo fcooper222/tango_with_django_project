@@ -4,4 +4,8 @@ from django.http import HttpResponse
 
 
 def index(request):
-    return HttpResponse("Rango says hey there partner!")
+    return HttpResponse("<a href=\"about/\">here is the about page<a/>")
+
+
+def about(request):
+    return HttpResponse('Rango says here is the about page.')
