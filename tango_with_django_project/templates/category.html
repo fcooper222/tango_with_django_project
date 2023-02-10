@@ -1,5 +1,33 @@
 <!DOCTYPE html>
+{% extends 'base.html' %}
+{% load static %}
 
+{% block title_block %}
+    {% if category %}
+        {{ category.name }}
+    {% else %} 
+        Unknown Category
+    {% endif %}
+{% endblock %}
+
+{% block body_block %}
+    {% if category %}
+    <h1>{{ category.name }}</h1>
+    {% if pages %}
+    <ul>
+        {% for page in pages %} 
+        <li><a href="{{ page.url }}">{{ page.title }}</a></li>
+        {% endfor %}
+    </ul>
+    {% else %} 
+    <strong>No pages currently in category.</strong>
+    {% endif %}
+    <a href="{% url 't_w_d_app:add_page' category.slug %}">Add Page</a> <br />
+    {% else %}
+    The specified category does not exist.
+    {% endif %}
+    {% endblock %}
+<!-- 
 <html>
     <main>
         <head>Category!!!!</head>
@@ -8,7 +36,7 @@
                 {% if category %} 
                     <h1>{{ category.name }}</h1>
                     {% if pages %} 
-                    <ul> {% for page in pages %}
+                    <ul> {% for page in views %}
                     <li><a href="{{ page.url }}">{{page.title}} has {{ page.views }} views</a></li>
                     {% endfor %} </ul>
                     {% else %} 
@@ -19,7 +47,9 @@
                 {% endif %} 
                 
             </div>
+            <h1><a href="add-page/">Add a page</h1>
         </body>
-        <foot><a href="/index">Go back to the index</a></foot>
+        <foot><a href="http://localhost:8000/rango">Go back to the index</a></foot>
     </main>
 </html>
+ -->

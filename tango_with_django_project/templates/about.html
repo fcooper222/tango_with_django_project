@@ -1,27 +1,18 @@
 <!DOCTYPE html>
+{% extends 'base.html' %}
 {% load static %}
-<html>
-    <head>
-    <title>ABOUT</title>
-    </head>
-    <body>
-        <h1>Rango says... ABOUT</h1>
-        <div>
-        hey there partner! <br />
-        <strong>{{ boldmessage }}</strong><br />
-        </div>
-        <div>
-        <a href="/index">INDEX</a><br />
-        <div>
-            <img src="{% static 'images/IMG_2007.jpg' %}"
-                alt="Picture of Rango" /> 
-        </div>
-        </div>
-    </body>
 
-    <foot>
-        this tutorial has been made by felix cooper-brown
-        <img src="{% static 'images/IMG_2007.JPG' %}" alt="me">
-    </foot>
 
-</html>
+{% block title_block %}
+<title>Rango</title>
+<h1>Rango says...</h1>
+    hey there partner! <br />
+    <strong>Here is the about page<br />{{ boldmessage }}</strong><br/>
+{% endblock %} 
+
+{% block body_block %}
+    <img src="{{ MEDIA_URL }}lets.jpg" alt="LETS" width="200" height="100" /><br />
+
+    <a href="{% url 't_w_d_app:index' %}">HERE IS THE WAY BACK</a><br />
+    <img src="{% static 'images/IMG_2740.jpg' %}" alt="Picture of Rango" height="1000px" width="1000px"/> 
+{% endblock %}
