@@ -5,7 +5,7 @@ from django.contrib import admin
 from rango.models import Category, Page
 
 
-class pageAdmin(admin.ModelAdmin):
+class PageAdmin(admin.ModelAdmin):
     list_display = ("title", "category", "url")
 
 

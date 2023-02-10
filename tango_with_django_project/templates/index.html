@@ -9,10 +9,19 @@
         <div>
         hey there partner! <br />
         <strong>{{ boldmessage }}</strong><br />
+        <div>
+        {% if categories %}
+        <ul> {% for category in categories %}
+            <li>{{ category.name }} has: {{category.likes}} likes</a></li>
+            {% endfor %}
+        </ul>
+        {% else %}
+        <strong>There are no cateogries here</strong>
+        {% endif %}
         </div>
         <div>
         <a href="/about">About</a><br />
-        <div>
+        
             <img src="{% static 'images/IMG_2740.jpg' %}"
                 alt="Picture of Rango" /> 
         </div>
