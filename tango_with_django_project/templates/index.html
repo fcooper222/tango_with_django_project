@@ -37,14 +37,6 @@
         <strong>There are no pages here</strong>
         {% endif %}
     </h3>
-    <h4>
-        {% for category in categories %}
-        <li>
-        <a href="{% url 'rango:show_category' category.slug %}">
-        {{ category.name }}
-        </a>
-        </li>
-        {% endfor %}
-    </h4>
+
 
 {% endblock %}
