@@ -23,4 +23,4 @@ class CategoryAdmin(admin.ModelAdmin):
     # Update the registration to include this customised interface
 admin.site.register(Category, CategoryAdmin)
 
-admin.site.regiester(UserProfile)
+admin.site.register(UserProfile)
