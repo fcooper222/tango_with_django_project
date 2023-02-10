@@ -23,8 +23,42 @@
         <a href="/about">About</a><br />
         
             <img src="{% static 'images/IMG_2740.jpg' %}"
-                alt="Picture of Rango" /> 
+                alt="Picture of Rango" width="200" height="200"/> 
         </div>
         </div>
+        <h2>
+            <Strong>Most liked categories</Strong>
+            {% if categories %}
+            <ul> {% for category in categories %}
+                <li>{{ category.name }} has: {{category.likes}} likes</a></li>
+                {% endfor %}
+            </ul>
+            {% else %}
+            <strong>There are no cateogries here</strong>
+            {% endif %}
+        </h2>
+        <h3>
+            Most liked pages
+            {% if pages %}
+            <ul> {% for page in pages %}
+            <li><a href="{{page.url}}">{{ page.title }} has: {{page.views}} views</a></li>
+            {% endfor %}
+            </ul>
+            
+            {% else %}
+            <strong>There are no pages here</strong>
+            {% endif %}
+        </h3>
     </body>
+    <foot>
+    <ul>
+        {% for category in categories %}
+        <li>
+        <!-- The following line is changed to add an HTML hyperlink -->
+        <a href="/category/{{ category.slug }}/">{{ category.name }}</a>
+        </li>
+        {% endfor %}
+        
+    </ul>
+    </foot>
 </html>
